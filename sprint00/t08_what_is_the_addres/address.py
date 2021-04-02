@@ -1,0 +1,10 @@
+first_var = 1000
+second_var = 1000
+third_var = 999
+print(f'first_var = {first_var}, address is {id(first_var)}')
+print(f'second_var = {second_var}, address is {id(second_var)}')
+print(f'third_var = {third_var}, address is {id(third_var)}')
+if first_var is second_var :
+    print(f'{first_var} is {second_var} = True')
+if first_var is not third_var :
+    print(f'{first_var} is {third_var} = False')
