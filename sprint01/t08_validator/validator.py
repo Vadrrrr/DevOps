@@ -1,49 +1,51 @@
-import re
-
-def validator(argument):
-	res = argument.split(' ')
-	op = res[1]
-	if op == '':
-		return False
-	try:
-		a = float(res[0])
-		b = float(res[2])
-		return check_op(op, a, b)
-	except Exception as e:
-		return False
-
-        
-def check_op(op, a, b):
-	if op == '<':
-		if a < b:
-			return True
-		else:
-			return f'{a} > {b}'
-	if op == '>':
-		if a > b:
-			return True
-		else:
-			return f'{a} < {b}'
-	elif op == '<=':
-		if a == b:
-			return f'{a} == {b}'
-		elif a <= b:
-			return True
-		else:
-			return f'{a} >= {b}'
-	elif op == '>=':
-		if a >= b:
-			return True
-		elif a == b:
-			return f'{a} == {b}'
-		else:
-			return f'{a} <= {b}'
-	elif op == '==':
-		if a == b:
-			return True
-		elif a <= b:
-			return f'{a} <= {b}'
-		elif a >= b:
-			return f'{a} >= {b}'
-	else:
-		return False
+def validator(args):
+    ar_args = args.split(' ')
+    oper = ar_args[1]
+    #a = ar_args[0]
+    #b = ar_args[2]
+    
+    if oper == '':
+        return False
+    try:
+        a = float(ar_args[0])
+        b = float(ar_args[2])
+    except Exception as e:
+        return False
+    
+    if oper == '>':
+        if a > b:
+            return True
+        if a == b:
+            return f'{a} == {b}'
+        else:
+            return f'{a} < {b}'
+    elif oper == '<':
+        if a < b:
+            return True
+        if a == b:
+            return f'{a} == {b}'
+        else:
+            return f'{a} > {b}'
+    elif oper == '>=':
+        if a == b:
+            return f'{a} == {b}'
+        elif a <= b:
+            return f'{a} <= {b}'
+        else:
+            return True
+    elif oper == '<=':
+        if a == b:
+            return f'{a} == {b}'
+        elif a >= b:
+            return f'{a} >= {b}'
+        else:
+            return True
+    elif oper == '==':
+        if a == b:
+            return True
+        elif a >= b:
+            return f'{a} >= {b}'
+        elif a <= b:
+            return f'{a} <= {b}'
+    else:
+        return False

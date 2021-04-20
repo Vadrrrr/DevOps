@@ -1,34 +1,37 @@
 def print_str_analytics(str):
-    count = 0
-    count1 = 0
-    count2 = 0
-    count3 = 0
-    count4 = 0
-    count5 = 0 
+    printable = 0
+    a_num = 0
+    a_bet = 0
+    dec = 0
+    lower = 0
+    upper = 0
+    w_space = 0
     for i in str:
-        if(i.isalnum()):
-            count = count + 1
-        if(i.isalpha()):
-            count1 = count1 + 1
-        if(i.isdecimal()):
-            count2 = count2 + 1
-        if(i.islower()):
-            count3 = count3 + 1
-        if(i.isupper()):
-            count4 = count4 + 1
-        if(i.isspace()):
-            count5 = count5 + 1
+        if i.isprintable() == True:
+            printable += 1
+        if i.isalnum() == True:
+            a_num += 1
+        if i.isalpha() == True:
+            a_bet += 1
+        if i.isdecimal() == True:
+            dec += 1
+        if i.islower() == True:
+            lower += 1
+        if i.isupper() == True:
+            upper += 1
+        if i.isspace() == True:
+            w_space += 1
     print(f"""|------------------------------------------------|
 |                String analytics                |
 |------------------------------------------------|
 | '{str}'
 |------------------------------------------------|
-| Number of printable characters is: {len(str)}
-| Number of alphanumeric characters is: {count}
-| Number of alphabetic characters is: {count1}
-| Number of decimal characters is: {count2}
-| Number of lowercase letters is: {count3}
-| Number of uppercase letters is: {count4}
-| Number of whitespace characters is: {count5}
+| Number of printable characters is: {printable}
+| Number of alphanumeric characters is: {a_num}
+| Number of alphabetic characters is: {a_bet}
+| Number of decimal characters is: {dec}
+| Number of lowercase letters is: {lower}
+| Number of uppercase letters is: {upper}
+| Number of whitespace characters is: {w_space}
 |------------------------------------------------|""")
 

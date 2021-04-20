@@ -1,6 +1,6 @@
 def convert_to_bytes(int1,boo,stri):
     try:
-        print(f'''-- The int valueis "{int1}"
+        print(f'''-- The int value is "{int1}"
 bytes: "{bytes(int(int1))}"''')
     except ValueError:
         return False
