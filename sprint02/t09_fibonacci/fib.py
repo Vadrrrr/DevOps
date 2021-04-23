@@ -5,6 +5,6 @@ def fib(n):
 
 def fib_generator(n):
     i = 0
-    while i <= n:
+    while i < n:
         yield fib(i)
         i += 1

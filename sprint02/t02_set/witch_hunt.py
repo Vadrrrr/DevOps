@@ -3,6 +3,6 @@ def witch_hunt(suspect_sets,innocent_sets):
         return set()
     elif suspect_sets and innocent_sets:
         witch = set.intersection(*suspect_sets)
-        print(sorted(witch.difference(*innocent_sets)))
+        return witch.difference(*innocent_sets)
     elif not innocent_sets:
-        print(set.intersection(*suspect_sets))
+        return set.intersection(*suspect_sets)

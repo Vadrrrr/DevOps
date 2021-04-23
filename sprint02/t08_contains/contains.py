@@ -1,7 +1,6 @@
 def contains(strin: str, subs: list):
-    lstr = strin.lower()
     res = []
     for i in subs:
-        if i in lstr:
+        if i.lower() in strin.lower():
             res.append(i)
     return res
